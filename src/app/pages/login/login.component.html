@@ -1,0 +1,46 @@
+<section>
+    <div class="loginSection">
+
+        <form #loginForm='ngForm' (ngSubmit)="onSubmit(loginForm)">
+
+            <div class="login_page">
+                <div class="orgname">
+                    <div class="labelStyle">
+                        <label  for="organization_name"> Organization Name</label>
+                    </div>
+                    <input  class="org_name" type="text" placeholder="Enter Organization Name" id="organization_name"
+                        name="org_name" [(ngModel)]="org_name" required
+                        #organization_name="ngModel">
+                        <mat-icon class="passwordhide">account_circle</mat-icon>
+                        <div  *ngIf="organization_name.invalid && (organization_name.dirty ||organization_name.touched)" class="alert">
+                            <span class="error" *ngIf="organization_name.errors?.['required']">Organization Name is required</span>
+                        </div>
+                </div>
+               
+                <div class="orgpassword">
+                    <div class="labelStyle">
+                        <label  for="organization_password"> Password</label>
+                    </div>
+                    <input class="org_pass" [type]="hide ? 'password' : 'text'" placeholder="Enter Password"
+                        id="organization_password" name="org_password" [(ngModel)]="org_password" required #organization_password="ngModel">
+                        <mat-icon class="passwordhide" (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        <div  *ngIf="organization_password.invalid && (organization_password.dirty ||organization_password.touched)" class="alert">
+                            <span class="error" *ngIf="organization_password.errors?.['required']">Organization Password is required</span>
+                        </div>
+                </div>
+                <div class="loginbtn">
+                    <button class="login_btn" type="submit" [disabled]="!loginForm.valid">Login</button>
+
+                </div>
+                <div class="signup">
+                    <span>Don't have an account? &nbsp;<span class="signuppage" >
+                        <a routerLink="/signup" routerLinkActive="active" ariaCurrentWhenActive="page">Sign Up</a></span></span>
+                </div>
+            </div>
+
+
+        </form>
+
+
+    </div>
+</section>
