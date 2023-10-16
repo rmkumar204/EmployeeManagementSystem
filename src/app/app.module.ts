@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Global } from './global/global';
 import { IonicModule } from '@ionic/angular';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 const routes:Routes=[];
@@ -20,7 +21,7 @@ const routes:Routes=[];
     RouterModule.forRoot(routes,{useHash:true}),
     HttpClientModule,
     IonicModule.forRoot(),
-    
+    BrowserAnimationsModule
     
 
   ],

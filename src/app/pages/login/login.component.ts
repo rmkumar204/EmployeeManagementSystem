@@ -33,6 +33,7 @@ export class LoginComponent {
      this.httpClient.post(this.global.url+'login',data,this.headeroption).pipe().subscribe((data:any)=>{
       console.log(data)
       localStorage.setItem('org_name',data.data.org_name);
+      localStorage.setItem('org_id',data.data.org_id);
       // this.router.navigate(['/organization']);
       this.navCtrl.navigateRoot('/organization');
 
