@@ -6,6 +6,7 @@ import { RouterModule,Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Global } from './global/global';
+import { IonicModule } from '@ionic/angular';
 
 
 const routes:Routes=[];
@@ -18,6 +19,7 @@ const routes:Routes=[];
     AppRoutingModule,
     RouterModule.forRoot(routes,{useHash:true}),
     HttpClientModule,
+    IonicModule.forRoot(),
     
     
 

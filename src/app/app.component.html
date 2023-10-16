@@ -1,3 +1,35 @@
+    <ion-app >
+        <ion-split-pane contentId="main" >
+            <!-- Main menu -->
+            <ion-menu contentId="main" type="overlay" [ngClass]="{'displaynone':!login_success,'':login_success}">
+              <ion-content class="contentstyle">
+                <div class="menutitle" style="height: 100%;">
+                    <div class="logo">
+                        <ion-row style="justify-content: center;margin:7px 0px 7px 0px">
+                                <ion-img style="width:200px;height:105px"  src="./../assets/tesla.webp"></ion-img>
+                        </ion-row>
+                    </div>
+                    <ion-list style=" padding-top:10px;">
+                      
+                       <ion-menu-toggle  auto-hide="false">
+                           <ion-item class="menus" routerDirection="root" [routerLink]="['organization']" [class.selected]="selectedMenuItem === 'DB'" (click)="selectMenuItem('DB')">Dashboard</ion-item>
+                       </ion-menu-toggle>
+                       <ion-menu-toggle    auto-hide="false">
+                           <ion-item class="menus" routerDirection="root" [routerLink]="['users']" [class.selected]="selectedMenuItem === 'USR'" (click)="selectMenuItem('USR')">Users</ion-item>
+                       </ion-menu-toggle>
+                       <ion-menu-toggle  auto-hide="false">
+                           <ion-item class="menus" routerDirection="root" [routerLink]="['tabs/dashboard']" [class.selected]="selectedMenuItem === 'WS'" (click)="selectMenuItem('WS')">Workspace</ion-item>
+                       </ion-menu-toggle>
+                       <ion-menu-toggle  auto-hide="false">
+                           <ion-item class="menus" routerDirection="root" [routerLink]="['tabs/dashboard']" [class.selected]="selectedMenuItem === 'DCS'" (click)="selectMenuItem('DCS')">Documents</ion-item>
+                       </ion-menu-toggle>
+                      
+                    </ion-list>
+                </div>
+              </ion-content>
+            </ion-menu>
+            <ion-router-outlet id="main"></ion-router-outlet>
+        </ion-split-pane>
+        
+    </ion-app>
 
-<div *ngIf="login_success">hello</div>
-<router-outlet></router-outlet>

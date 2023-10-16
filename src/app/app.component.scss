@@ -1,0 +1,29 @@
+.displaynone{
+    display: none;
+    }
+.split-pane-visible{
+    --side-min-width:228px !important;
+    --side-max-width:15% !important;
+}
+    
+    .contentstyle::part(scroll) {
+        --overflow:hidden !important;
+        background-color: aqua;
+    }
+    .menus::part(native){
+        background-color: rgb(9, 171, 225);
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 32px;
+        font-family: Roboto, sans-serif;
+        letter-spacing: .0125em;
+        cursor: pointer;
+    }
+    .menus::part(native):hover{
+        background-color: rgb(40, 153, 228);
+        color: yellow;
+    }
+
+    ion-item.selected {
+        color: #fff;
+      }
