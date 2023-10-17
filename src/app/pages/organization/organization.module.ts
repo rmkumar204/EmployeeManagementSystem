@@ -5,6 +5,7 @@ import { OrganizationRoutingModule } from './organization-routing.module';
 import { OrganizationComponent } from './organization.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import {IonicModule} from '@ionic/angular';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import {IonicModule} from '@ionic/angular';
     CommonModule,
     OrganizationRoutingModule,
     SharedModule,
+    MatToolbarModule,
     IonicModule
   ]
 })

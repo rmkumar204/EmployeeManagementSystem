@@ -4,18 +4,34 @@
         <app-header-breadcrums></app-header-breadcrums>
     </ion-toolbar>
 </ion-header>
-<ion-content>
+<ion-content class="content">
     
+    <mat-toolbar class="mat_toolbar">
+        <span>Dashboard</span>
+        <span class="example-spacer"></span>
+        
+      </mat-toolbar>
+
    <div class="dashboard">
     <div class="dashboardcontent">
-        <ion-card >
-            <ion-img src="./../../../assets/people.jpg"></ion-img>
+        
+        <ion-card class="card" >
+            <ion-avatar class="avatar">
+                <ion-img src="./../../../assets/people.jpg"></ion-img>
+            </ion-avatar>
+            <span>Users</span>
         </ion-card>
-        <ion-card>
-            <ion-img src="./../../../assets/workspace.png"></ion-img>
+        <ion-card class="card">
+            <ion-avatar class="avatar">
+                <ion-img src="./../../../assets/workspace.png"></ion-img>
+            </ion-avatar>
+            <span>Workspace</span>
         </ion-card>
-        <ion-card>
-            <ion-img src="./../../../assets/documents.png"></ion-img>
+        <ion-card class="card">
+            <ion-avatar class="avatar">
+                <ion-img src="./../../../assets/documents.png"></ion-img>
+            </ion-avatar>
+            <span>Documents</span>
         </ion-card>
     </div>
    </div>

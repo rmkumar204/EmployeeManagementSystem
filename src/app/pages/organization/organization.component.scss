@@ -1,12 +1,11 @@
 .dashboard{
     width: 90%;
-    padding: 30px;
-    margin: 0 auto;
-    height: 100%;
+    /* padding: 30px; */
+    margin: 10% auto;
+    /* height: 100%; */
     display: flex;
     align-items: center;
-    justify-content: center;
-    background-color: rgb(203, 224, 224);
+    justify-content: space-between;
 }
 .dashboardcontent{
     display: flex;
@@ -15,7 +14,26 @@
 
 }
 .dashboardcontent ion-card{
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     margin: 0 10px;
+    text-align: center;
+}
+
+.content{
+    --background:#3c383d;
+
+  }
+  .mat_toolbar{
+    background-color: #3b1f47;
+}
+.avatar{
+    width: 50%;
+    height: 50%;
+}
+.card{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
 }

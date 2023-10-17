@@ -4,8 +4,8 @@
         <app-header-breadcrums></app-header-breadcrums>
     </ion-toolbar>
 </ion-header>
-<ion-content>
-    <mat-toolbar color="primary">
+<ion-content class="content">
+    <mat-toolbar class="mat_toolbar">
         <span>Users</span>
         <span class="example-spacer"></span>
         <button mat-raised-button (click)="userform()">
@@ -50,9 +50,16 @@
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Gender </th>
                 <td mat-cell *matCellDef="let row"> {{row.gender}} </td>
               </ng-container>
+             
               <ng-container matColumnDef="dob">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> DOB </th>
                 <td mat-cell *matCellDef="let row"> {{row.dob}} </td>
+              </ng-container>
+              <ng-container matColumnDef="workspace">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Workspace</th>
+                <td mat-cell *matCellDef="let row"> 
+                    <button mat-button class="workspace" (click)="workspace(row.id)">Workspace</button>    
+                </td>
               </ng-container>
               <ng-container matColumnDef="action">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Action</th>

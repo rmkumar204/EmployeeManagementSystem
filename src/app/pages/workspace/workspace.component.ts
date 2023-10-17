@@ -1,6 +1,6 @@
 import { Component, ViewChild,OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { UserAddEditComponent } from './user-add-edit/user-add-edit.component';
+import { WorkspaceAddEditComponent } from './workspace-add-edit/workspace-add-edit.component';
 import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
 import {MatSort, MatSortModule} from '@angular/material/sort';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
@@ -9,13 +9,12 @@ import { HttpClient } from '@angular/common/http';
 import {NavController} from '@ionic/angular';
 
 @Component({
-  selector: 'app-users',
-  templateUrl: './users.component.html',
-  styleUrls: ['./users.component.scss']
+  selector: 'app-workspace',
+  templateUrl: './workspace.component.html',
+  styleUrls: ['./workspace.component.scss']
 })
-export class UsersComponent implements OnInit{
-
-  displayedColumns: string[] = ['id', 'firstname', 'lastname', 'email','gender','dob','workspace','action'];
+export class WorkspaceComponent implements OnInit {
+  displayedColumns: string[] = ['id', 'workspace', 'documents','action'];
   dataSource!: MatTableDataSource<any>;
 
   headeroptions:any;
@@ -29,26 +28,13 @@ export class UsersComponent implements OnInit{
     ){}
 
   ngOnInit(): void {
-    this.getUserDetails()
-  }
-  userform(){
-    const dialogRef=this._dialog.open(UserAddEditComponent);
-    dialogRef.afterClosed().subscribe(
-      {
-        next:(val)=>{
-          if(val){
-            this.getUserDetails();
-          }
-        }
-      }
-    )
+    this.getWorkspaceDetails()
   }
 
-  async getUserDetails(){
-    let id=localStorage.getItem('org_id');
+  getWorkspaceDetails(){
+    let id=localStorage.getItem('user_id');
     this.headeroptions=this.global.header;
-    console.log(this.global.url+`users/${id}`)
-    this.httpClient.get(this.global.url+`users/${id}`,this.headeroptions).pipe().subscribe((data:any)=>{
+    this.httpClient.get(this.global.url+`workspace/${id}`,this.headeroptions).pipe().subscribe((data:any)=>{
       console.log(data);
       this.dataSource=new MatTableDataSource(data.data);
       console.log(this.dataSource)
@@ -56,6 +42,20 @@ export class UsersComponent implements OnInit{
       this.dataSource.paginator=this.paginator;
     })
   }
+
+  workspaceform(){
+    const dialogRef=this._dialog.open(WorkspaceAddEditComponent);
+    dialogRef.afterClosed().subscribe(
+      {
+        next:(val)=>{
+          if(val){
+            this.getWorkspaceDetails();
+          }
+        }
+      }
+    )
+  }
+
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -65,31 +65,32 @@ export class UsersComponent implements OnInit{
     }
   }
 
-  deleteUser(id:number){
-    this.httpClient.delete(this.global.url+`users/${id}`,this.headeroptions).pipe().subscribe((response:any)=>{
+  deleteWorkspace(id:number){
+    this.httpClient.delete(this.global.url+`workspace/${id}`,this.headeroptions).pipe().subscribe((response:any)=>{
       if(response.statusCode==200){
-        this.getUserDetails();
+        this.getWorkspaceDetails();
       }
     })
   }
-  editUser(data:any){
+  editWorkspace(data:any){
     console.log('datareceived', data)
-   const dialogRef= this._dialog.open(UserAddEditComponent,{
+   const dialogRef= this._dialog.open(WorkspaceAddEditComponent,{
       data
     });
     dialogRef.afterClosed().subscribe(
       {
         next:(val)=>{
           if(val){
-            this.getUserDetails();
+            this.getWorkspaceDetails();
           }
         }
       }
     )
   }
-  workspace(userid:any){
-   
-    this.navCtrl.navigateRoot('/workspace');
-    localStorage.setItem('user_id',userid);
+  documents(workspaceid:number){
+    this.navCtrl.navigateRoot('/documents');
+    localStorage.setItem('workspaceid',JSON.stringify(workspaceid));
   }
+
+
 }

@@ -8,10 +8,10 @@
     
     .contentstyle::part(scroll) {
         --overflow:hidden !important;
-        background-color: aqua;
+        background-color: #3c383d;
     }
     .menus::part(native){
-        background-color: rgb(9, 171, 225);
+        background-color:  rgb(51 47 53);;
         font-size: 20px;
         font-weight: 500;
         line-height: 32px;
@@ -26,4 +26,8 @@
 
     ion-item.selected {
         color: #fff;
+      }
+
+      .list-md{
+        padding: 0px !important;
       }
