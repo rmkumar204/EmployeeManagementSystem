@@ -26,6 +26,10 @@ const routes: Routes = [
   {
     path:'workspace',
     loadChildren:()=>import('./pages/workspace/workspace.module').then(m=>m.WorkspaceModule)
+  },
+  {
+    path:'documents',
+    loadChildren:()=>import('./pages/documents/documents.module').then(m=>m.DocumentsModule)
   }
 ];
 

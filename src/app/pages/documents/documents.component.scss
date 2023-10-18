@@ -1,0 +1,25 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .tablecontent{
+    padding-top: 20px;
+    padding-left: 10px;
+    margin: 0 auto;
+    padding-right: 10px;
+
+    mat-form-field{
+        width: 100%;
+    }
+  }
+  .action{
+    display: flex;
+    gap:5px;
+  }
+  .content{
+    --background:#3c383d;
+
+  }
+  .mat_toolbar{
+    background-color: #3b1f47;
+}
