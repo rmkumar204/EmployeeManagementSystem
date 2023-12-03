@@ -19,6 +19,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DocumentsAddEditComponent } from './documents-add-edit/documents-add-edit.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { DocumentsAddEditComponent } from './documents-add-edit/documents-add-ed
     ReactiveFormsModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule    
+    MatSortModule, 
+    FormsModule    
   ]
 })
 export class DocumentsModule { }
