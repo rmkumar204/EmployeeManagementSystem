@@ -21,7 +21,8 @@ const routes:Routes=[];
     RouterModule.forRoot(routes,{useHash:true}),
     HttpClientModule,
     IonicModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    IonicModule.forRoot({})
     
 
   ],
