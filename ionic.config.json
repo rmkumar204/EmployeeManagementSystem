@@ -1,7 +1,6 @@
 {
-  "name": "EmployeeManagementSystem",
-  "integrations": {
-    "capacitor": {}
-  },
+
+  "name": "Angular",
+  "integrations": {},
   "type": "angular"
 }
