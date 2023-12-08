@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { WorkspacedetailsComponent } from './pages/workspace/workspacedetails/workspacedetails.component';
 
 const routes: Routes = [
+  
   {
     path:'',
     redirectTo:'login',
