@@ -60,14 +60,5 @@
           <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
         </div>
     </div>
-
-    <div>
-        <li *ngFor="let item of details; let i=index">
-            <a routerLinkActive="active" [routerLink]="[i]">
-                <span>{{item.name}}</span>
-                <span>{{item.age}}</span>
-            </a>
-        </li>
-    </div>
-    <!-- <ion-router-outlet></ion-router-outlet> -->
+    
 </ion-content>

@@ -19,15 +19,13 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import {MatDialogModule} from '@angular/material/dialog';
 import { WorkspaceAddEditComponent } from './workspace-add-edit/workspace-add-edit.component';
-import { WorkspacedetailsComponent } from './workspacedetails/workspacedetails.component';
 
 
 
 @NgModule({
   declarations: [
     WorkspaceComponent,
-    WorkspaceAddEditComponent,
-    WorkspacedetailsComponent
+    WorkspaceAddEditComponent
   ],
   imports: [
     CommonModule,

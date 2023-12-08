@@ -1,4 +1,4 @@
-import { Component, ViewChild,OnInit,OnDestroy } from '@angular/core';
+import { Component, ViewChild,OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { WorkspaceAddEditComponent } from './workspace-add-edit/workspace-add-edit.component';
 import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
@@ -7,45 +7,28 @@ import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import { Global } from 'src/app/global/global';
 import { HttpClient } from '@angular/common/http';
 import {NavController} from '@ionic/angular';
-import { WorkspacedetailsService } from 'src/app/workspace/workspacedetails.service';
-import { ActivatedRoute, Params } from '@angular/router';
-// import { Observable,Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-workspace',
   templateUrl: './workspace.component.html',
   styleUrls: ['./workspace.component.scss']
 })
-export class WorkspaceComponent implements OnInit,OnDestroy {
+export class WorkspaceComponent implements OnInit {
   displayedColumns: string[] = ['id', 'workspace', 'documents','action'];
   dataSource!: MatTableDataSource<any>;
-  details:any;
-  oneDetail:any;
-  id!:number;
+
   headeroptions:any;
-  
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   constructor(private _dialog:MatDialog,
     public global:Global,
     public httpClient:HttpClient,
     public navCtrl:NavController,
-    public workspaceDetails:WorkspacedetailsService,
-    private route:ActivatedRoute,
+
     ){}
 
   ngOnInit(): void {
     this.getWorkspaceDetails()
-    this.route.params.subscribe((params:Params)=>this.id=+params['id'])
-    console.log(this.id);
-    this.details=this.workspaceDetails.getDetails();
-    this.oneDetail=this.workspaceDetails.getOneDetail(this.id)
-
-  
-  }
-  
-  ngOnDestroy(): void {
-    
   }
 
   getWorkspaceDetails(){

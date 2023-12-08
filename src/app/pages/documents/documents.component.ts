@@ -8,7 +8,6 @@ import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import { Global } from 'src/app/global/global';
 import { HttpClient } from '@angular/common/http';
 import {NavController} from '@ionic/angular';
-import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-documents',
@@ -20,14 +19,10 @@ export class DocumentsComponent {
 
   displayedColumns: string[] = ['id', 'documents','action'];
   dataSource!: MatTableDataSource<any>;
-  Nname:string='';
-  email:string='';
-  password:string='';
 
   headeroptions:any;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-  @ViewChild('dform') signUpForm!:NgForm;
   constructor(private _dialog:MatDialog,
     public global:Global,
     public httpClient:HttpClient,
@@ -93,9 +88,5 @@ export class DocumentsComponent {
         }
       }
     )
-  }
-
-  onSubmit(){
-    console.log('submitted',this.signUpForm)
   }
 }
