@@ -10,16 +10,13 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/cdk": "^16.2.8",
-    "@angular/material": "^16.2.8",
-
-    "@mobiscroll/angular": "npm:@mobiscroll/angular-ivy-trial@^5.27.1",
-
     "@angular/animations": "^17.0.2",
+    "@angular/cdk": "^16.2.8",
     "@angular/common": "^17.0.2",
     "@angular/compiler": "^17.0.2",
     "@angular/core": "^17.0.2",
     "@angular/forms": "^17.0.2",
+    "@angular/material": "^16.2.8",
     "@angular/platform-browser": "^17.0.2",
     "@angular/platform-browser-dynamic": "^17.0.2",
     "@angular/router": "^17.0.2",
@@ -29,25 +26,24 @@
     "@capacitor/keyboard": "5.0.6",
     "@capacitor/status-bar": "5.0.6",
     "@ionic/angular": "^7.0.0",
+    "@mobiscroll/angular": "npm:@mobiscroll/angular-ivy-trial@^5.27.1",
     "ionicons": "^7.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.2"
   },
   "devDependencies": {
-
     "@angular-devkit/build-angular": "^16.0.2",
     "@angular/cli": "~16.0.2",
     "@angular/compiler-cli": "^16.0.0",
+    "@ionic/angular-toolkit": "latest",
     "@types/jasmine": "~4.3.0",
     "jasmine-core": "~4.6.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
-
     "karma-jasmine-html-reporter": "~2.0.0",
-    "typescript": "~5.0.2",
-    "@ionic/angular-toolkit": "latest"
+    "typescript": "^5.3.3"
   }
 }
